@@ -1,0 +1,4 @@
+#clickOff,
+table.off tr + tr + tr + tr + tr + tr {
+    display: none;
+} 
