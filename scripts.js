@@ -1,9 +1,11 @@
 $(function(){
-	var i = 1;
-	$('#openoff tr').each(function(){
-    	i++
-    });
-    $('.badge').html(i);
+	
+var x = $('#openoff tr');
+x.each(function(i){
+	$('.badge').html(i);
+    i++
+$(this).find('td').eq(0).html(i);
+});
     
     $('#clickOn').click(function(){
     	$(this).hide();
