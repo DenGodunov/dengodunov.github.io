@@ -2,9 +2,9 @@ $(function(){
 	
 var x = $('#openoff tr');
 x.each(function(i){
+	i++;
 	$('.badge').html(i);
-    i++
-$(this).find('td').eq(0).html(i);
+	$(this).find('td').eq(0).html(i);
 });
     
     $('#clickOn').click(function(){
