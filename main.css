@@ -2,3 +2,6 @@
 table.off tr + tr + tr + tr + tr + tr + tr + tr + tr + tr + tr + tr + tr + tr + tr + tr {
     display: none;
 } 
+.table td {
+   text-align: center;   
+}
