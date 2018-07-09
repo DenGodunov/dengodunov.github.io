@@ -2,6 +2,12 @@
 table.off tr + tr + tr + tr + tr + tr + tr + tr + tr + tr + tr + tr + tr + tr + tr + tr {
     display: none;
 } 
+.wrap {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    position: relative;
+}
 .table td {
    text-align: center;   
 }
