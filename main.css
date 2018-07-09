@@ -5,3 +5,9 @@ table.off tr + tr + tr + tr + tr + tr + tr + tr + tr + tr + tr + tr + tr + tr + 
 .table td {
    text-align: center;   
 }
+td.name_column,
+th.name_column {
+	max-width: 320px;
+	word-wrap: break-word
+}
+
