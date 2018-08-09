@@ -90,7 +90,7 @@ def item_to_tr(item):
 def commit_content(c):
     new_content = c
     username = 'DenGodunov'
-    token = '43b06ea2fc39f58dc2573f5370757052e2cf3b27'
+    token = 'xxx'
     gh = login(username=username, token=token)
     
     repo = gh.repository(username, 'dengodunov.github.io')
