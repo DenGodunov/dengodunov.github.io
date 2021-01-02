@@ -5,7 +5,16 @@
     <link>/categories/demo/</link>
     <description>Recent content in Demo on My blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 03 Sep 2018 00:00:00 +0000</lastBuildDate><atom:link href="/categories/demo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/demo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Перевод статьи из блога DBT</title>
+      <link>/first-post/</link>
+      <pubDate>Sat, 02 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/first-post/</guid>
+      <description>Мой перевод поста When did analytics engineering become a thing? And why? Год назад я готовила презентацию к выступлению и вступительный слайд должен был отображать мою роль. Изначально меня наняли как Аналитика Данных и в начале я делала обычные для аналитика данных вещи. Я собирала данные для отделов финансов и маркетинга, анализировала тренды и генерировала инсайты и больше всего времени проводила в Ексель и Looker.</description>
+    </item>
+    
     <item>
       <title>The Story Hugo Theme</title>
       <link>/about-story/</link>
