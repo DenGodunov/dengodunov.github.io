@@ -1,0 +1,32 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>My blog </title>
+		<link>/</link>
+		<generator>Hugo -- gohugo.io</generator>
+		<language>en-us</language>
+		<author></author>
+		<rights>Copyright (c) 2018</rights>
+		<updated>2018-09-03 00:00:00 &#43;0000 UTC</updated>
+		
+		<item>
+			<title>Posts</title>
+			<link>/post/</link>
+			<pubDate>Mon, 03 Sep 2018 00:00:00 UTC</pubDate>
+			<author></author>
+			<guid>/post/</guid>
+			<media:content xmlns:media="http://search.yahoo.com/mrss/" url="/img/default-header-img.tn-500x500.jpg" medium="image" type="image/jpg" width="100" height="100" />
+			<description></description>
+		</item>
+		
+		<item>
+			<title>Pages</title>
+			<link>/page/</link>
+			<pubDate>Fri, 03 Apr 2015 02:13:50 UTC</pubDate>
+			<author></author>
+			<guid>/page/</guid>
+			<media:content xmlns:media="http://search.yahoo.com/mrss/" url="/img/default-header-img.tn-500x500.jpg" medium="image" type="image/jpg" width="100" height="100" />
+			<description></description>
+		</item>
+		
+	</channel>
+</rss>

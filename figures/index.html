@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Story&rsquo;s Figures, Captions, and Tables</title>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+		<link rel="canonical" href="/figures/">
+		
+		<link rel="shortcut icon" type="image/png" href="/apple-touch-icon-precomposed.png">
+		<meta name="description" content="This article shows you how to enhance your images and tables with features such as captions and alternative stylings.">
+		
+		<meta name="generator" content="Hugo 0.80.0" />
+
+		
+		<meta property="og:title" content="Story&rsquo;s Figures, Captions, and Tables" />
+		<meta property="og:type" content="article" />
+		<meta property="og:image" content="/img/unsplash-photos-vHnVtLK8rCc.jpg" />
+		<meta property="og:description" content="This article shows you how to enhance your images and tables with features such as captions and alternative stylings." />
+		<meta property="og:url" content="/figures/" />
+		<meta property="og:site_name" content="Story&rsquo;s Figures, Captions, and Tables" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@https://twitter.com/XXX" />
+
+
+		
+		<link rel="stylesheet" href="/css/tachyons.min.css" />
+		<link rel="stylesheet" href="/css/story.css" />
+		<link rel="stylesheet" href="/css/descartes.css" />
+		
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400i,700,700i|Quattrocento:400,700|Spectral:400,400i,700,700i&amp;subset=latin-ext" rel="stylesheet">
+		
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		
+		<script src="/js/story.js"></script>
+
+	</head>
+	<body class="ma0 bg-white section-post page-kind-page is-page-true  feature-figcaption feature-figcaption-hidden feature-figlink feature-fignum feature-tablecaption">
+		
+		<header class="cover bg-top" style="background-image: url('/img/unsplash-photos-vHnVtLK8rCc.jpg'); background-position: center;">
+			<div class="bg-black-30 bb bt">
+
+				<nav class="hide-print sans-serif  border-box pa3 ph5-l">
+					<a href="/" title="Home">
+						<img src="/img/logo.jpg" class="w2 h2 br-100" alt="My blog" />
+					</a>
+					<div class="fr h2 pv2 tr">
+						<a class="link f5 ml2 dim near-white fas fa-rss-square" href="/index.xml" title="RSS Feed"></a>
+						<a class="link f5 ml2 dim near-white fas fa-search" href="/search/" role="search" title="Search"></a>
+					</div>
+				</nav>
+
+				<div id="hdr" class="tc-l pv4-ns pv5-l pv2 ph3 ph4-ns">
+					<h1 class="near-white mt1-ns f2 fw3 mb0 mt0 lh-title">Story&rsquo;s Figures, Captions, and Tables</h1>
+					<h2 class="near-white mt3-l mb4-l fw1 f6 f3-l measure-wide-l center lh-copy mt2 mb3">
+						
+						
+							
+								Published
+								<time datetime="2018-08-22T00:00:00Z">Aug 22, 2018</time>
+								<span class="display-print">by </span>
+								 in <a href="/categories/demo" class="no-underline category near-white dim">Demo</a>
+								<span class="display-print">at /figures/</span>
+							
+						
+					</h2>
+				</div>
+
+				
+				
+				
+				<div class="w-100 cf hide-print">
+					<a class="fr f6 ma0 pa2 link white-50 dim fas fa-camera" href="https://unsplash.com/photos/vHnVtLK8rCc" title="Photo Credit"></a>
+				</div>
+				
+				
+
+			</div>
+		</header>
+		
+		<main role="main">
+		
+<article class="center bg-white br-3 pv1 ph4 lh-copy f5 nested-links mw7">
+	<p>Story can automatically transform images into figures with captions.
+It can also add captions to tables.
+And it adds features and styling to both images and tables.
+This article is a demo of Story&rsquo;s features for figures, tables, and captions.</p>
+<h3 id="image-captions-and-figures">Image Captions and Figures</h3>
+<p>If the <code>feature-figcaption</code> flag is set (and not negated), Story will transform
+your images into figures, and add a caption. There are several ways this can be done. Story tries
+each method, in the following order.</p>
+<p>First, if an image is followed immediately by an <code>&lt;em&gt;</code> <em>in the same paragraph</em>, Story treats
+the content of the <code>&lt;em&gt;</code> as the image caption. To enable this, the image and
+the text must not have a blank line between them. Example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">![<span style="color:#f92672">Water Lily</span>](<span style="color:#a6e22e">/img/unsplash-photos-vHnVtLK8rCc.jpg</span>)
+<span style="font-style:italic">_Water lily photo by Zoltan Tasi on Unsplash_</span>
+</code></pre></div><p>This markup results in a <code>&lt;p&gt;&lt;img...&gt;&lt;em...&gt;&lt;/p&gt;</code> markup that Story converts into a captioned figure.
+Hover your mouse over the picture to see the caption:</p>
+<p><img src="/img/unsplash-photos-vHnVtLK8rCc.jpg" alt="Water Lily">
+<em>Water lily photo by Zoltan Tasi on Unsplash</em></p>
+<p>If there&rsquo;s no <code>&lt;em&gt;</code> to use, Story uses the image&rsquo;s <code>title</code> attribute as a fallback:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">![<span style="color:#f92672">Water Lily</span>](<span style="color:#a6e22e">/img/unsplash-photos-vHnVtLK8rCc.jpg &#34;A water lily&#34;</span>)
+</code></pre></div><p><img src="/img/unsplash-photos-vHnVtLK8rCc.jpg" alt="Water Lily" title="A water lily"></p>
+<p>Finally, Story falls back to the <code>alt</code> attribute:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">![<span style="color:#f92672">Water Lily</span>](<span style="color:#a6e22e">/img/unsplash-photos-vHnVtLK8rCc.jpg</span>)
+</code></pre></div><p><img src="/img/unsplash-photos-vHnVtLK8rCc.jpg" alt="Water Lily"></p>
+<h3 id="table-styling">Table Styling</h3>
+<p>Story has multiple built-in table styles that you can apply with feature flags.
+The default is similar to GitHub&rsquo;s table styling:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git status</code></td>
+<td>List all <em>new or modified</em> files</td>
+</tr>
+<tr>
+<td><code>git diff</code></td>
+<td>Show file differences that <strong>haven&rsquo;t been</strong> staged</td>
+</tr>
+<tr>
+<td><code>git commit</code></td>
+<td>Record changes to the repository</td>
+</tr>
+<tr>
+<td><code>git branch</code></td>
+<td>List, create, or delete branches</td>
+</tr>
+</tbody>
+</table>
+<p>There is <em>also</em> a style designed for tables that are part of an
+article with figures, resembling scientific papers or other more formal use
+cases. This is enabled with <code>feature-tablefig</code>. Click <!-- raw HTML omitted -->here<!-- raw HTML omitted --> to toggle.</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th style="text-align:center">Estimated</th>
+<th style="text-align:center">Positive and Significant</th>
+<th style="text-align:center">Negative and Significant</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Demographic Variables for Head</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>Male</td>
+<td style="text-align:center">85</td>
+<td style="text-align:center">74</td>
+<td style="text-align:center">11</td>
+</tr>
+<tr>
+<td>Age</td>
+<td style="text-align:center">85</td>
+<td style="text-align:center">85</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td>Age Squared</td>
+<td style="text-align:center">85</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">85</td>
+</tr>
+<tr>
+<td>Head&rsquo;s Education</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>Completed primary or incomplete secondary</td>
+<td style="text-align:center">76</td>
+<td style="text-align:center">76</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td>Completed secondary or higher</td>
+<td style="text-align:center">60</td>
+<td style="text-align:center">60</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td>Completed secondary</td>
+<td style="text-align:center">19</td>
+<td style="text-align:center">19</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td>Higher</td>
+<td style="text-align:center">20</td>
+<td style="text-align:center">20</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td>Unknown</td>
+<td style="text-align:center">12</td>
+<td style="text-align:center">12</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table>
+<p>Tables with columns of right-aligned numbers are more readable with fixed-width numerals; click to toggle <!-- raw HTML omitted --><code>feature-tablefw</code><!-- raw HTML omitted -->. Observe the table below and see how its columns are easier to read with fixed-width numerals. This is noticeable with Github-style table formatting, but not with academic-style.</p>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th style="text-align:right">Inclination, deg.</th>
+<th style="text-align:right">Longitude, Asc. Node, deg.</th>
+<th style="text-align:right">Mean Distance, au</th>
+<th style="text-align:right">Eccentricity</th>
+<th style="text-align:right">Mean  Longitude, deg.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jan. 28</td>
+<td style="text-align:right">7.0052</td>
+<td style="text-align:right">48.486</td>
+<td style="text-align:right">0.387097</td>
+<td style="text-align:right">0.205644</td>
+<td style="text-align:right">355.3943</td>
+</tr>
+<tr>
+<td>Mar. 9</td>
+<td style="text-align:right">7.0052</td>
+<td style="text-align:right">48.487</td>
+<td style="text-align:right">0.387098</td>
+<td style="text-align:right">0.205646</td>
+<td style="text-align:right">159.0899</td>
+</tr>
+<tr>
+<td>Apr. 18</td>
+<td style="text-align:right">7.0052</td>
+<td style="text-align:right">48.489</td>
+<td style="text-align:right">0.387097</td>
+<td style="text-align:right">0.205649</td>
+<td style="text-align:right">322.7854</td>
+</tr>
+<tr>
+<td>May 28</td>
+<td style="text-align:right">7.0052</td>
+<td style="text-align:right">48.490</td>
+<td style="text-align:right">0.387097</td>
+<td style="text-align:right">0.205650</td>
+<td style="text-align:right">126.4812</td>
+</tr>
+<tr>
+<td>July 7</td>
+<td style="text-align:right">7.0052</td>
+<td style="text-align:right">48.492</td>
+<td style="text-align:right">0.387098</td>
+<td style="text-align:right">0.205645</td>
+<td style="text-align:right">290.1771</td>
+</tr>
+<tr>
+<td>Aug. 16</td>
+<td style="text-align:right">7.0052</td>
+<td style="text-align:right">48.493</td>
+<td style="text-align:right">0.387098</td>
+<td style="text-align:right">0.205645</td>
+<td style="text-align:right">93.8725</td>
+</tr>
+<tr>
+<td>Sept. 25</td>
+<td style="text-align:right">7.0052</td>
+<td style="text-align:right">48.494</td>
+<td style="text-align:right">0.387098</td>
+<td style="text-align:right">0.205642</td>
+<td style="text-align:right">257.5683</td>
+</tr>
+<tr>
+<td>Nov. 4</td>
+<td style="text-align:right">7.0052</td>
+<td style="text-align:right">48.495</td>
+<td style="text-align:right">0.387099</td>
+<td style="text-align:right">0.205635</td>
+<td style="text-align:right">61.2628</td>
+</tr>
+<tr>
+<td>Dec. 14</td>
+<td style="text-align:right">7.0052</td>
+<td style="text-align:right">48.497</td>
+<td style="text-align:right">0.387099</td>
+<td style="text-align:right">0.205635</td>
+<td style="text-align:right">224.9579</td>
+</tr>
+<tr>
+<td>Dec. 54</td>
+<td style="text-align:right">7.0052</td>
+<td style="text-align:right">48.498</td>
+<td style="text-align:right">0.387098</td>
+<td style="text-align:right">0.205633</td>
+<td style="text-align:right">28.6524</td>
+</tr>
+</tbody>
+</table>
+<p><em>Mercury&rsquo;s Heliocentric Osculating Orbital Elements Referred to the Mean Equinox and Ecliptic of Date for 2013</em></p>
+<h3 id="caption-styling-and-linking">Caption Styling And Linking</h3>
+<p>Story uses JavaScript and CSS to make figures and tables more beautiful and
+functional.</p>
+<ul>
+<li>Figures and tables get sequentially numbered <code>ID</code> attributes of <code>#fig-1</code> and so on, so
+you can link to them.</li>
+<li>The <code>feature-figlink</code> feature flag searches the article for text such as
+Figure 1 and automatically links it to the appropriate figure.</li>
+<li>If the <code>feature-fignum</code> feature is enabled, the text of the caption is
+prepended with the figure number. Click here to <!-- raw HTML omitted -->toggle this
+feature<!-- raw HTML omitted -->, then inspect the captions again to see the effect.</li>
+<li>The <code>feature-figcaption-hidden</code> feature makes the captions hidden until you
+move the mouse over them. The <code>feature-figcaption-visible</code> feature flag
+overrides this and makes the captions visible immediately below the image.
+Click here to <!-- raw HTML omitted -->toggle this feature<!-- raw HTML omitted -->.</li>
+</ul>
+<h3 id="table-captions">Table Captions</h3>
+<p>Story doesn&rsquo;t convert tables to figures, but it can add captions to tables.
+See Table 3, which is followed by a paragraph whose entire content is inside an <code>&lt;em&gt;</code> tag.
+If the <code>feature-tablecaption</code> feature is enabled, Story will use unobtrusive JavaScript to move that paragraph&rsquo;s text into the table&rsquo;s <code>&lt;caption&gt;</code> element.</p>
+<p>Tables can be autolinked and table captions can be numbered, similar to images.
+These features are controlled by the same <code>feature-figlink</code> and <code>feature-fignum</code> flags that control image captioning and linking, so they&rsquo;ll be consistently applied.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Read next: <a href="/images/">Story&rsquo;s image formatting features</a>.</p>
+</article>
+
+		</main>
+		
+				<div class="hide-print sans-serif f6 f5-l mt5 ph3 pb6 center nested-copy-line-height lh-copy nested-links mw-100 measure-wide">
+		<div class="about-the-author">
+		
+			
+			
+				
+					
+				
+			
+		
+		</div>
+		
+	</div>
+
+		
+		
+		
+		<footer class="hide-print sans-serif f6 fw1 bg-black near-white bottom-0 w-100 pa3" role="contentinfo">
+			<p class="w-50 fr tr">
+			<a class="no-underline near-white" href="https://github.com/xaprb/story"><img class="dib" title="Made with Hugo and Story" alt="Story logo" src="/img/story-logo-white.svg" style="width: 1.5rem; height: 1.5rem" /></a>
+			</p>
+			<p class="w-50 near-white">
+				&copy; 2021 
+			</p>
+		</footer>
+		
+	
+	
+	</body>
+</html>

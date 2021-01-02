@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Story&rsquo;s Feature Flags</title>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+		<link rel="canonical" href="/features/">
+		
+		<link rel="shortcut icon" type="image/png" href="/apple-touch-icon-precomposed.png">
+		<meta name="description" content="Story comes with a lot of power, but it&rsquo;s all configurable: almost every extra feature is optional.">
+		
+		<meta name="generator" content="Hugo 0.80.0" />
+
+		
+		<meta property="og:title" content="Story&rsquo;s Feature Flags" />
+		<meta property="og:type" content="article" />
+		<meta property="og:image" content="/img/unsplash-photos-QRkew0KwXSM.jpg" />
+		<meta property="og:description" content="Story comes with a lot of power, but it&rsquo;s all configurable: almost every extra feature is optional." />
+		<meta property="og:url" content="/features/" />
+		<meta property="og:site_name" content="Story&rsquo;s Feature Flags" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@https://twitter.com/XXX" />
+
+
+		
+		<link rel="stylesheet" href="/css/tachyons.min.css" />
+		<link rel="stylesheet" href="/css/story.css" />
+		<link rel="stylesheet" href="/css/descartes.css" />
+		
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400i,700,700i|Quattrocento:400,700|Spectral:400,400i,700,700i&amp;subset=latin-ext" rel="stylesheet">
+		
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		
+		<script src="/js/story.js"></script>
+
+	</head>
+	<body class="ma0 bg-white section-post page-kind-page is-page-true ">
+		
+		<header class="cover bg-top" style="background-image: url('/img/unsplash-photos-QRkew0KwXSM.jpg'); background-position: center;">
+			<div class="bg-black-30 bb bt">
+
+				<nav class="hide-print sans-serif  border-box pa3 ph5-l">
+					<a href="/" title="Home">
+						<img src="/img/logo.jpg" class="w2 h2 br-100" alt="My blog" />
+					</a>
+					<div class="fr h2 pv2 tr">
+						<a class="link f5 ml2 dim near-white fas fa-rss-square" href="/index.xml" title="RSS Feed"></a>
+						<a class="link f5 ml2 dim near-white fas fa-search" href="/search/" role="search" title="Search"></a>
+					</div>
+				</nav>
+
+				<div id="hdr" class="tc-l pv4-ns pv5-l pv2 ph3 ph4-ns">
+					<h1 class="near-white mt1-ns f2 fw3 mb0 mt0 lh-title">Story&rsquo;s Feature Flags</h1>
+					<h2 class="near-white mt3-l mb4-l fw1 f6 f3-l measure-wide-l center lh-copy mt2 mb3">
+						
+						
+							
+								Published
+								<time datetime="2018-08-30T00:00:00Z">Aug 30, 2018</time>
+								<span class="display-print">by </span>
+								 in <a href="/categories/demo" class="no-underline category near-white dim">Demo</a>
+								<span class="display-print">at /features/</span>
+							
+						
+					</h2>
+				</div>
+
+				
+				
+				
+				<div class="w-100 cf hide-print">
+					<a class="fr f6 ma0 pa2 link white-50 dim fas fa-camera" href="https://unsplash.com/photos/QRkew0KwXSM" title="Photo Credit"></a>
+				</div>
+				
+				
+
+			</div>
+		</header>
+		
+		<main role="main">
+		
+<article class="center bg-white br-3 pv1 ph4 lh-copy f5 nested-links mw7">
+	<p>Feature flags, which are called <em>classes</em> in the markup, control many of Story&rsquo;s features.
+You can enable and disable them in your site config, or in an individual post&rsquo;s front matter.
+This article documents Story&rsquo;s feature flags.</p>
+<h3 id="enabling-feature-flags">Enabling Feature Flags</h3>
+<p>Feature flags can be enabled globally or locally, and the combination of these determines content behavior.
+This lets you enable them for the entire site, or for an individual post.
+The combined list of features that applies to a piece of content is the union of the two lists.</p>
+<p>Here&rsquo;s how to enable the &ldquo;example&rdquo; feature for the entire site, in your site&rsquo;s <code>config.yaml</code> file:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">params</span>:
+   <span style="color:#f92672">classes</span>:
+   - <span style="color:#ae81ff">feature-example</span>
+</code></pre></div><p>Here&rsquo;s how to enable the &ldquo;misc&rdquo; feature in an individual piece of content, via its YAML front matter:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
+<span style="color:#f92672">classes</span>:
+- <span style="color:#ae81ff">feature-misc</span>
+---
+</code></pre></div><p>The contents of both feature lists are combined and put into the <code>&lt;body&gt;</code> tag&rsquo;s <code>class</code> attribute, verbatim:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">body</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;feature-example feature-misc&#34;</span>&gt;...&lt;/<span style="color:#f92672">body</span>&gt;
+</code></pre></div><p>If you&rsquo;re using TOML, then the syntax in <code>config.toml</code> looks like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">[<span style="color:#a6e22e">params</span>]
+  <span style="color:#a6e22e">classes</span> = [<span style="color:#e6db74">&#34;feature-example&#34;</span>, <span style="color:#e6db74">&#34;feature-misc&#34;</span>]
+</code></pre></div><h3 id="disabling-features">Disabling Features</h3>
+<p>Many features can be <em>negated</em> by prefixing the feature name with <code>no</code>, like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
+<span style="color:#f92672">classes</span>:
+- <span style="color:#ae81ff">feature-noexample</span>
+---
+</code></pre></div><p>If a feature is enabled globally and negated in a single piece of content&rsquo;s front matter, both the positive and negative form will appear in the CSS classes.
+Features in Story are inside of code that checks not only whether flags are enabled, but also whether they&rsquo;re overridden with a negation.
+One consequence of this is that if you disable a feature globally in <code>config.yaml</code>, you can&rsquo;t enable it locally in a single piece of content.
+You can only enable globally and disable locally, not the other way around.</p>
+<p>There&rsquo;s nothing special about a feature flag, and you can put arbitrary values into the configuration arrays.
+Story only recognizes and supports specific values; it ignores others.
+You can take advantage of this to add any values into the arrays that you want, if they&rsquo;re useful for your other purposes.
+For example, you can use this ability to set any desired CSS class, for selection either with your custom CSS, or to work with something off-the-shelf that happens to look for a specific class.</p>
+<h3 id="list-of-features">List Of Features</h3>
+<p>Features have varying implementations.
+Some affect how Hugo processes content, some affect CSS presentation, and some are implemented in unobtrusive JavaScript after the page finishes loading.</p>
+<p>Here&rsquo;s a list of all of Story&rsquo;s features and how they&rsquo;re implemented.
+The first column links to a demo of those features.
+For brevity, the <code>feature-</code> prefix is omitted, but all of Story&rsquo;s classes have that prefix to avoid naming conflicts.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Explanation</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/images">3dbook-covers</a></td>
+<td>Styles images to resemble a hardcover book</td>
+<td>JS + CSS</td>
+</tr>
+<tr>
+<td><a href="/figures">figcaption</a></td>
+<td>Transforms images into captioned figures</td>
+<td>JS + CSS</td>
+</tr>
+<tr>
+<td><a href="/figures">figcaption-hidden</a></td>
+<td>Hides figure captions, revealing them on mouseover</td>
+<td>CSS</td>
+</tr>
+<tr>
+<td><a href="/figures">figcaption-visible</a></td>
+<td>Formats figure captions visibly</td>
+<td>CSS</td>
+</tr>
+<tr>
+<td><a href="/figures">figlink</a></td>
+<td>Links text like &ldquo;Figure/Table 3&rdquo; to the corresponding figure or table</td>
+<td>JS</td>
+</tr>
+<tr>
+<td><a href="/figures">fignum</a></td>
+<td>Auto-numbers figures and tables</td>
+<td>CSS</td>
+</tr>
+<tr>
+<td><a href="/typography">h3-cl</a></td>
+<td>Adds CSS <code>clear: left</code> to all <code>&lt;h3&gt;</code> tags</td>
+<td>CSS</td>
+</tr>
+<tr>
+<td><a href="/typography">h3-cr</a></td>
+<td>Adds CSS <code>clear: right</code> to all <code>&lt;h3&gt;</code> tags</td>
+<td>CSS</td>
+</tr>
+<tr>
+<td><a href="/typography">h3-cb</a></td>
+<td>Adds CSS <code>clear: both</code> to all <code>&lt;h3&gt;</code> tags</td>
+<td>CSS</td>
+</tr>
+<tr>
+<td><a href="/typography">highlight</a></td>
+<td>Applies syntax highlighting to code blocks, using HighlightJS</td>
+<td>JS + CSS</td>
+</tr>
+<tr>
+<td><a href="/typography">hrdinkus</a></td>
+<td>Styles <code>&lt;hr&gt;</code> elements as a dinkus (three asterisks)</td>
+<td>CSS</td>
+</tr>
+<tr>
+<td><a href="/typography">hrfleuron</a></td>
+<td>Styles <code>&lt;hr&gt;</code> elements as a fleuron (❦)</td>
+<td>CSS</td>
+</tr>
+<tr>
+<td><a href="/typography">hyphenate</a></td>
+<td>Enables line-breaks and hyphenation of text via the browser</td>
+<td>CSS</td>
+</tr>
+<tr>
+<td><a href="/typography">justify</a></td>
+<td>Aligns text with full-justification</td>
+<td>CSS</td>
+</tr>
+<tr>
+<td><a href="/math">math</a></td>
+<td>Enables LaTeX math typesetting using KaTeX</td>
+<td>JS</td>
+</tr>
+<tr>
+<td><a href="/music">music</a></td>
+<td>Enables rendering abc notation as sheet music with abcjs</td>
+<td>JS</td>
+</tr>
+<tr>
+<td><a href="/images/">nohdr</a></td>
+<td>Disables header images locally; when applied globally, disables preview thumbnails in lists</td>
+<td>Hugo</td>
+</tr>
+<tr>
+<td><a href="/typography">subtitle</a></td>
+<td>Enabled by default; disable to hide page subtitles</td>
+<td>CSS</td>
+</tr>
+<tr>
+<td><a href="/figures">tablefig</a></td>
+<td>Styles tables similar to scientific papers</td>
+<td>JS + CSS</td>
+</tr>
+<tr>
+<td><a href="/figures">tablefw</a></td>
+<td>Sets table cells in a font with fixed-width numerals</td>
+<td>CSS</td>
+</tr>
+<tr>
+<td>titlecase</td>
+<td>Not enabled by default; Transforms All Content Titles to Titlecase</td>
+<td>Hugo</td>
+</tr>
+<tr>
+<td><a href="/typography">tweetquote</a></td>
+<td>Renders a blockquote in a simplistic tweet style, if it follows conventions</td>
+<td>JS + CSS</td>
+</tr>
+</tbody>
+</table>
+<p>Read next: <a href="/author-profiles/">Story&rsquo;s author biographies</a>.</p>
+</article>
+
+		</main>
+		
+				<div class="hide-print sans-serif f6 f5-l mt5 ph3 pb6 center nested-copy-line-height lh-copy nested-links mw-100 measure-wide">
+		<div class="about-the-author">
+		
+			
+			
+				
+					
+				
+			
+		
+		</div>
+		
+	</div>
+
+		
+		
+		
+		<footer class="hide-print sans-serif f6 fw1 bg-black near-white bottom-0 w-100 pa3" role="contentinfo">
+			<p class="w-50 fr tr">
+			<a class="no-underline near-white" href="https://github.com/xaprb/story"><img class="dib" title="Made with Hugo and Story" alt="Story logo" src="/img/story-logo-white.svg" style="width: 1.5rem; height: 1.5rem" /></a>
+			</p>
+			<p class="w-50 near-white">
+				&copy; 2021 
+			</p>
+		</footer>
+		
+	
+	
+	</body>
+</html>

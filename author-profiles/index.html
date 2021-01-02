@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Story&rsquo;s Author Profiles</title>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+		<link rel="canonical" href="/author-profiles/">
+		
+		<link rel="shortcut icon" type="image/png" href="/apple-touch-icon-precomposed.png">
+		<meta name="description" content="With Story, you can define global and per-item author profiles/biographies.">
+		
+		<meta name="generator" content="Hugo 0.80.0" />
+
+		
+		<meta property="og:title" content="Story&rsquo;s Author Profiles" />
+		<meta property="og:type" content="article" />
+		<meta property="og:image" content="/img/unsplash-photos-TzMi5Ov7QeM.jpg" />
+		<meta property="og:description" content="With Story, you can define global and per-item author profiles/biographies." />
+		<meta property="og:url" content="/author-profiles/" />
+		<meta property="og:site_name" content="Story&rsquo;s Author Profiles" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@https://twitter.com/XXX" />
+
+
+		
+		<link rel="stylesheet" href="/css/tachyons.min.css" />
+		<link rel="stylesheet" href="/css/story.css" />
+		<link rel="stylesheet" href="/css/descartes.css" />
+		
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400i,700,700i|Quattrocento:400,700|Spectral:400,400i,700,700i&amp;subset=latin-ext" rel="stylesheet">
+		
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		
+		<script src="/js/story.js"></script>
+
+	</head>
+	<body class="ma0 bg-white section-post page-kind-page is-page-true ">
+		
+		<header class="cover bg-top" style="background-image: url('/img/unsplash-photos-TzMi5Ov7QeM.jpg'); background-position: center;">
+			<div class="bg-black-30 bb bt">
+
+				<nav class="hide-print sans-serif  border-box pa3 ph5-l">
+					<a href="/" title="Home">
+						<img src="/img/logo.jpg" class="w2 h2 br-100" alt="My blog" />
+					</a>
+					<div class="fr h2 pv2 tr">
+						<a class="link f5 ml2 dim near-white fas fa-rss-square" href="/index.xml" title="RSS Feed"></a>
+						<a class="link f5 ml2 dim near-white fas fa-search" href="/search/" role="search" title="Search"></a>
+					</div>
+				</nav>
+
+				<div id="hdr" class="tc-l pv4-ns pv5-l pv2 ph3 ph4-ns">
+					<h1 class="near-white mt1-ns f2 fw3 mb0 mt0 lh-title">Story&rsquo;s Author Profiles</h1>
+					<h2 class="near-white mt3-l mb4-l fw1 f6 f3-l measure-wide-l center lh-copy mt2 mb3">
+						
+						
+							
+								Published
+								<time datetime="2018-08-29T00:00:00Z">Aug 29, 2018</time>
+								<span class="display-print">by Elvis Presley</span>
+								 in <a href="/categories/demo" class="no-underline category near-white dim">Demo</a>
+								<span class="display-print">at /author-profiles/</span>
+							
+						
+					</h2>
+				</div>
+
+				
+				
+				
+				<div class="w-100 cf hide-print">
+					<a class="fr f6 ma0 pa2 link white-50 dim fas fa-camera" href="https://unsplash.com/photos/TzMi5Ov7QeM" title="Photo Credit"></a>
+				</div>
+				
+				
+
+			</div>
+		</header>
+		
+		<main role="main">
+		
+<article class="center bg-white br-3 pv1 ph4 lh-copy f5 nested-links mw7">
+	<p>Story supports author profiles, so you can highlight your bio.
+It&rsquo;s possible to set this globally for the entire site, or individually for each
+piece of content. Or you can set a global default and override it on individual
+pieces of content.
+Scroll to the bottom of any page on this site to see how author profiles are
+styled.</p>
+<p>Story&rsquo;s author profile system is a slightly simplified (incomplete)
+implementation of the ideas laid out in <a href="https://www.netlify.com/blog/2018/07/24/hugo-tips-how-to-create-author-pages/">Netlify&rsquo;s how-to
+document</a>.
+It allows only one author per piece of content, and doesn&rsquo;t require Hugo to
+create the authors taxonomy.  Because it&rsquo;s incomplete, it&rsquo;s a) missing a few of the
+features Netlify describes, and b) easier to set up.</p>
+<h3 id="global-and-per-content-authors">Global And Per-Content Authors</h3>
+<p>If you want to specify an author in the front matter of each post, it&rsquo;s
+simply specified like this (YAML example):</p>
+<pre><code>---
+author: &quot;Elvis Presley&quot;
+---
+</code></pre><p>If you want to set a global author parameter for the entire site, which will serve as
+the default in case any pieces of content don&rsquo;t specify their own, use your
+config file&rsquo;s <code>params</code> array:</p>
+<pre><code>params:
+   author: &quot;Baron Schwartz&quot;
+</code></pre><p>That&rsquo;s exactly what this sample site you&rsquo;re reading right now does: Baron is the
+author by default, but Elvis is the author of <em>this</em> content you&rsquo;re reading now.</p>
+<h3 id="creating-author-profiles">Creating Author Profiles</h3>
+<p>To create author profiles, you need to create the author hierarchy under
+<code>content</code>, and a slugified directory for each author. Then, place an <code>_index.md</code>
+file into each of those directories, and give it the content needed to describe
+the author.</p>
+<p>For example:</p>
+<pre><code>└── content/
+    └── authors/
+        ├── elvis-presley/
+        │   └── _index.md
+        ├── aretha-franklin/
+        │   └── _index.md
+        └── stevie-wonder/
+            └── _index.md
+</code></pre><p>You can put any content you want in the file, but Story has CSS to nicely format
+a square image followed by a paragraph of text. This page you&rsquo;re viewing right
+now has &ldquo;Elvis Presley&rdquo; as its author, and the content of
+<code>content/authors/elvis-presley/_index.md</code> is:</p>
+<pre><code>---
+---
+![Elvis](/img/elvis.jpg)
+
+Elvis Aaron Presley (January 8, 1935 – August 16, 1977) was an American singer
+and actor. Regarded as one of the most significant cultural icons of the 20th
+century, he is often referred to as the &quot;King of Rock and Roll&quot; or simply &quot;the
+King&quot;.
+</code></pre><h3 id="global-fallback-content">Global Fallback Content</h3>
+<p>Even if you don&rsquo;t have an author directory and a specific author&rsquo;s file as
+described above, you can create content that will serve as a fallback across the
+whole site. If Story doesn&rsquo;t find a specific author&rsquo;s profile page, it&rsquo;ll look
+for the default <code>_index.md</code> content for the section it&rsquo;s currently rendering.
+The top-level default for the whole site is <code>content/_index.md</code>, which this demo
+site uses to provide Baron Schwartz&rsquo;s author information. This information will
+appear on all pages <em>other than</em> the current page, which is authored by Elvis
+Presley. This fallback information from <code>content/_index.md</code> looks like the
+following:</p>
+<pre><code>[![Baron Schwartz](/img/baron-square.jpg)](https://www.xaprb.com)
+
+Baron Schwartz is the founder and CTO of [VividCortex](https://vividcortex.com), author of
+several books, and creator of various open-source software. He writes about topics
+such as technology, entrepreneurship, and fitness. [More about
+Baron](https://www.xaprb.com/).
+</code></pre><p>This content is a (non-author-specific) fallback for the entire site.
+You can see it on all the other pages of this site.</p>
+<p>Read next: <a href="/figures/">Story&rsquo;s figures, captions, and tables</a>.</p>
+</article>
+
+		</main>
+		
+				<div class="hide-print sans-serif f6 f5-l mt5 ph3 pb6 center nested-copy-line-height lh-copy nested-links mw-100 measure-wide">
+		<div class="about-the-author">
+		
+			
+			
+				
+					
+				
+			
+		
+		</div>
+		
+	</div>
+
+		
+		
+		
+		<footer class="hide-print sans-serif f6 fw1 bg-black near-white bottom-0 w-100 pa3" role="contentinfo">
+			<p class="w-50 fr tr">
+			<a class="no-underline near-white" href="https://github.com/xaprb/story"><img class="dib" title="Made with Hugo and Story" alt="Story logo" src="/img/story-logo-white.svg" style="width: 1.5rem; height: 1.5rem" /></a>
+			</p>
+			<p class="w-50 near-white">
+				&copy; 2021 
+			</p>
+		</footer>
+		
+	
+	
+	</body>
+</html>
